@@ -1,3 +1,5 @@
+import "crx-hotreload"; // https://www.freecodecamp.org/news/chrome-extension-with-parcel-tailwind/
+
 const playSound = (param) => {
     let url = 'boing.mp3';
     if (param == "tada")

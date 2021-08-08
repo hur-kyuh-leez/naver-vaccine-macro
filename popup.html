@@ -6,177 +6,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>NAVER Vaccine MACRO options</title>
-    <style>
-        html,
-        body {
-            width: 300px;
-            height: auto;
-            margin: 0;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        .app {
-            padding: 16px;
-        }
-
-        .app-title {
-            margin: 0 0 16px 0;
-        }
-
-
-        label {
-            display: block;
-            font-size: 16px;
-            padding-bottom: 4px;
-            color: rgba(0, 0, 0, .76);
-        }
-
-        input {
-            width: 100%;
-            height: 40px;
-            border-radius: 4px;
-            font-size: 18px;
-            border: 1px solid #dddddd;
-            padding: 0 8px;
-            margin-bottom: 16px;
-        }
-
-        .actions {
-            text-align: right;
-        }
-
-        .button {
-            padding: 0 16px;
-            height: 40px;
-            line-height: 40px;
-            font-size: 14px;
-            border: 1px solid transparent;
-            background-color: rgb(0, 140, 255);
-            color: #ffffff;
-            border-radius: 4px;
-            margin-left: 8px;
-            display: inline-block;
-        }
-
-        #message {
-            height: 40px;
-            color: rgba(0, 0, 0, .76);
-            font-size: 12;
-        }
-
-        ul {
-            list-style:none;
-            padding-inline-start: 0;
-        }
-
-        .radio-toolbar input[type="radio"] {
-            display: inline;
-            width: 40px;
-            margin-bottom: 0px;
-        }
-
-        .radio-toolbar label {
-            display: inline-block;
-            background-color: #eee;
-            padding: 4px 11px;
-            font-family: Arial;
-            font-size: 16px;
-            cursor: pointer;
-            vertical-align: top;
-        }
-
-        .radio-toolbar input[type="radio"]:checked+label {
-            background-color: #bbb;
-        }
-
-        textarea {
-            width:100%;
-            height:100px;
-        }
-
-        .hospital_results {
-            list-style: decimal;
-        }
-        .hospital_results .hospital_item {
-            margin-left: 1em;
-        }
-
-        .hospital_results input {
-            width: auto;
-            height: auto;
-        }
-    </style>
+    <link rel="stylesheet" href="../dist/style.css"/>
 </head>
 
 <body>
-    <div class="app">
-        <h2 class="app-title">자동 예약 옵션</h2>
-        <div class="form radio-toolbar">
-            <label for="vaccine_list">백신 선택</label>
-            <ul id="vaccine_list">
-                <li>
-                    <input type="radio" id="target_vaccine_all" name="select_vaccine"/>
-                    <label for="target_vaccine_all">아무거나</label>
-                </li>
-                <li>
-                    <input type="radio" id="target_vaccine_0" name="select_vaccine"/>
-                    <label for="target_vaccine_0">아스트라제네카</label>
-                </li>
-                <li>
-                    <input type="radio" id="target_vaccine_1" name="select_vaccine"/>
-                    <label for="target_vaccine_1">얀센</label>
-                </li>
-                <li>
-                    <input type="radio" id="target_vaccine_2" name="select_vaccine"/>
-                    <label for="target_vaccine_2">화이자</label>
-                </li>
-                <li>
-                    <input type="radio" id="target_vaccine_3" name="select_vaccine"/>
-                    <label for="target_vaccine_3">모더나</label>
-                </li>
-            </ul>
-            <label for="interval">새로고침 주기 (ms)</label>
-            <input type="text" id="interval">
-            <label for="reserve_test">test mode (check시 예약 시도 안함, 시도 가능 시점에 텔레그램 통보만)</label>
-            <input type="checkbox" id="reserve_test" name="reserve_test"/>
-        </div>
-        <h2 class="app-title">텔레그램 연동</h2>
-        <div class="form">
-            <label for="bot-token">bot token</label>
-            <input type="text" id="bot-token">
+    <div class="app w-96">
+        <div class="relative flex min-h-screen">
+            <!--  background absolute position  -->
+          <!--   skewed boxes -->
+            <div class="absolute inset-0 bg-gradient-to-r from-green-400 via-white-500 to-blue-500 transform -skew-y-3">
+              <div class="grid grid-cols-7 grid-row-7 w-full h-full text-transparent">
+               <div class="bg-blue-300 col-span-3 opacity-50 transform skew-y-6">1</div>
+               <div>0</div>
+               <div>1</div>
+               <div>4</div>
+               <div>5</div>
+               <div class="bg-blue-400 col-span-3 opacity-70 transform skew-y-6">6</div>
+               <div>7</div>
+               <div>8</div>
+               <div>9</div>
+               <div>10</div>
+               <div>11</div>
+               <div>12</div>
+               <div>13</div>
+               <div>14</div>
+               <div>15</div>
+               <div>16</div>
+               <div>17</div>
+               <div>18</div>
+               <div>19</div>
+               <div>20</div>
+               <div>21</div>
+               <div>22</div>
+               <div>23</div>
+               <div>24</div>
+               <div>25</div>
+               <div>26</div>
+               <div>27</div>
+               <div>28</div>
+               <div>29</div>
+               <div>30</div>
+               <div class="bg-gradient-to-r opacity-60 row-span-4 transform -skew-x-6">31</div>
+               <div>32</div>
+               <div>33</div>
+               <div>34</div>
+               <div>35</div>
+               <div>36</div>
+               <div>37</div>
+               <div class="col-span-2 row-span-2 bg-gradient-to-r opacity-75 transform -skew-y-12">38</div>
+               <div>39</div>
+               <div>40</div>
+               <div>41</div>
+               <div>42</div>
+               <div>43</div>
+               <div>44</div>
+               <div>45</div>
+               <div>46</div>
+               <div>47</div>
+               <div>48</div>
+               <div>49</div>
+              </div>
+            </div>
+            <div class="relative">
+              <!-- setting -->
+              <div class="flex justify-evenly bg-blue-900 w-96 py-2">
+                <!-- quick setting -->
+                <button class= "text-lg text-white">quick setting
+                </button>
+              
 
-            <label for="chat-id">chat id</label>
-            <input type="text" id="chat-id">
-        </div>
-        <div id="message"></div>
-        <div class="actions">
-            <button type="button" class="button" id="button-reset">초기화</button>
-            <button type="button" class="button" id="button-save">텔레그램 연결</button>
-            <button type="button" class="button" id="button-reload">Reload(개발용)</button>
-        </div>
-        <div><a href="https://m.place.naver.com/rest/vaccine?vaccineFilter=used" target="_blank">네이버 플레이스 잔여백신 예약 바로가기</a></div>
-        <div>
-            <label for="graphql_result">graphql result</label>
-            <a href="https://github.com/changdoc/naver-vaccine-macro/issues/11" target="_blank">data 추출방법</a>
-            <textarea id="graphql_result"></textarea>
-            <button type="button" class="button" id="button-extract">병원 목록 생성 및 저장</button>
-        </div>
-        <div>
-            <label for="left_by_count_coords">left_by_count_coords Request Payload</label>
-            <a href="https://github.com/changdoc/naver-vaccine-macro/issues/166" target="_blank">Request Payload 추출방법</a>
-            <textarea id="left_by_count_coords"></textarea>
-            <button type="button" class="button" id="button-save-kakao-body" style="font-size: 10px">left_by_count_coords Request Payload 저장</button>
-        </div>
-        <div>
-            <div id="hospital_results_desc"></div>
-            <ul id="hospital_results" class="hospital_results">
-
-            </ul>
-        </div>
-    </div>
+                <!-- detail setting -->
+                <button>detail setting(공사중)
+                    
+                </button>
+                
+              </div>
+             
+               <!--  vaccine type selection -->
+               <div class="text-white text-center items-center w-96 py-1 text-sm ">
+                select one
+              </div>
+              <div>
+               
+                <button class="font-extrabold text-3xl text-rainbow w-96 h-10 hover:bg-white focus:bg-white"> RANDOM</button>
+                <button class="">
+                  <input type="image" class="w-96 h-10 hover:bg-white focus:bg-white" src="../logos/moderna-logo.svg" />
+                </button>
+                <button class="">
+                  <input type="image" class="w-96 h-10 hover:bg-white focus:bg-white" src="../logos/pfizer-5.svg" />
+                </button>
+                <button class="">
+                  <input type="image" class="w-96 h-10 hover:bg-white focus:bg-white" src="../logos/johnson-johnson-4.svg" />
+                </button>
+                <button class="">
+                  <input type="image" class="w-96 h-10 hover:bg-white focus:bg-white" src="../logos/astrazeneca-1.svg" />
+                </button>
+              </div>
+               <div class="mt-5 text-white text-center items-center w-96 pt-1 text-sm border-t border-blue-400">새로고침 주기</div>
+              <div class="flex mx-24 mt-2">
+                <input placeholder="min: 2000~" class="focus:outline-none rounded-md shadow-md w-24"type="text"></input>
+                <p>~</p>
+              <input class="focus:outline-none rounded-md shadow-md w-24"type="text"></input>
+                <p>ms</p>
+              </div>
+                <div class="fixed bottom-0 w-44 opacity-40 text-gray-300 text-xs">
+                  <p>ux designed by</p>
+                  <p>Hur-kyuh-leez</p>
+                </div>
+            </div>
+          </div>
+    </div>  
     <script src="popup.js"></script>
 </body>
 

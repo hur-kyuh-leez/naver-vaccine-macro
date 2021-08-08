@@ -1,0 +1,23 @@
+{
+  "name": "naver-vaccine-macro",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/hur-kyuh-leez/naver-vaccine-macro.git",
+  "author": "Hercules <hyukkyulee@alumni.emory.edu>",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^10.3.1",
+    "parcel": "^2.0.0-rc.0",
+    "postcss-import": "^14.0.2"
+  },
+  "dependencies": {
+    "crx-hotreload": "^1.0.6",
+    "tailwindcss": "^2.2.7"
+  },
+  "scripts": {
+    "prebuild": "rm -rf dist .cache .parcel-cache",
+    "build:tailwind": "tailwindcss build src/style.css -c ./tailwind.config.js -o dist/style.css",
+    "watch": "NODE_ENV=development yarn build:tailwind && cp src/manifest.json dist/ && parcel watch --no-hmr src/{background.js,content-script.js}",
+    "build": "NODE_ENV=production yarn build:tailwind && cp src/manifest.json dist/ && parcel build src/{background.js,content-script.js}"
+  }
+}
