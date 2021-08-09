@@ -8,7 +8,26 @@
     <title>NAVER Vaccine MACRO options</title>
     <link rel="stylesheet" href="../dist/style.css"/>
 </head>
+<style>
+  /* HIDE RADIO */
+  [type=radio] { 
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0; 
+    }
 
+  /* IMAGE STYLES */
+  [type=radio] + img {
+    cursor: pointer;
+    }
+
+  /* CHECKED STYLES */
+  [type=radio]:checked + img, [type=radio]:checked + p{ 
+    background-color: white;
+    }
+  }
+</style>
 <body>
     <div class="app w-96">
         <div class="relative flex min-h-screen">
@@ -87,26 +106,48 @@
                 select one
               </div>
               <div>
-               
-                <button class="font-extrabold text-3xl text-rainbow w-96 h-10 hover:bg-white focus:bg-white"> RANDOM</button>
-                <button class="">
-                  <input type="image" class="w-96 h-10 hover:bg-white focus:bg-white" src="../logos/moderna-logo.svg" />
+                
+                <button class="vaccines" > 
+                 
+                  <label>
+                    <input name=select-vaccine id="target_vaccine_3" type="radio">
+                    <p id="" class="font-extrabold text-3xl text-rainbow w-96 h-10 hover:bg-white "> RANDOM </p>
+                   </label>
                 </button>
-                <button class="">
-                  <input type="image" class="w-96 h-10 hover:bg-white focus:bg-white" src="../logos/pfizer-5.svg" />
+                <button class="vaccines">
+                  <label>
+                    <input name=select-vaccine id="target_vaccine_3" type="radio">
+                    <img class="w-96 h-10 hover:bg-white focus:bg-white" src="../logos/moderna-logo.svg">
+                   </label>
                 </button>
-                <button class="">
-                  <input type="image" class="w-96 h-10 hover:bg-white focus:bg-white" src="../logos/johnson-johnson-4.svg" />
+                <button class="vaccines">
+                  <label>
+                    <input name=select-vaccine id="target_vaccine_2" type="radio">
+                    <img class="w-96 h-10 hover:bg-white focus:bg-white" src="../logos/pfizer-5.svg">
+                   </label>
                 </button>
-                <button class="">
-                  <input type="image" class="w-96 h-10 hover:bg-white focus:bg-white" src="../logos/astrazeneca-1.svg" />
+                <button class="vaccines">
+                  <label>
+                    <input name=select-vaccine id="target_vaccine_1" type="radio">
+                    <img class="w-96 h-10 hover:bg-white focus:bg-white" src="../logos/../logos/johnson-johnson-4.svg">
+                   </label>
                 </button>
-              </div>
+                <button class="vaccines">
+                  <label>
+                    <input name=select-vaccine id="target_vaccine_0" type="radio">
+                    <img class="w-96 h-10 hover:bg-white focus:bg-white" src="../logos/astrazeneca-1.svg">
+                   </label>
+                </button>
+  
+                
+
+                
+             
                <div class="mt-5 text-white text-center items-center w-96 pt-1 text-sm border-t border-blue-400">새로고침 주기</div>
               <div class="flex mx-24 mt-2">
-                <input placeholder="min: 2000~" class="focus:outline-none rounded-md shadow-md w-24"type="text"></input>
+                <input id="interval" placeholder="min: 2000~" class="focus:outline-none rounded-md shadow-md w-24"type="text"></input>
                 <p>~</p>
-              <input class="focus:outline-none rounded-md shadow-md w-24"type="text"></input>
+              <input id="interval_max" class="focus:outline-none rounded-md shadow-md w-24"type="text"></input>
                 <p>ms</p>
               </div>
                 <div class="fixed bottom-0 w-44 opacity-40 text-gray-300 text-xs">
