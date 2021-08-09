@@ -55,15 +55,17 @@
         //     saveVaccine();
         // });
 
-        // let selectedId = localStorage.getItem('NAVER_VACCINE_MACRO::vaccine');
-        // if (selectedId == null) {
-        //     document.getElementById("target_vaccine_all").checked = true;
-        //     return;
-        // }
-        // let target = document.getElementById(selectedId);
-        // if (target == null)
-        //     return;
-        // target.checked = true;
+
+        //  여기서 radio가 check 되어 있는지 확인한다.
+        let selectedId = localStorage.getItem('NAVER_VACCINE_MACRO::vaccine');
+        if (selectedId == null) {
+            document.getElementById("target_vaccine_all").checked = true;
+            return;
+        }
+        let target = document.getElementById(selectedId);
+        if (target == null)
+            return;
+        target.checked = true;
     }
 
     const saveVaccine = () => {
