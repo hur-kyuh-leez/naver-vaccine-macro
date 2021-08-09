@@ -36,8 +36,8 @@
         
         document.querySelectorAll('.vaccines').forEach(item => {
             item.addEventListener('click', event => {
-                console.log(event.target.id);
                 localStorage.setItem('NAVER_VACCINE_MACRO::vaccine', event.target.id);
+                console.log(typeof( event.target.id));
                 saveVaccine();
             })
           })
@@ -46,7 +46,7 @@
         let intervalText = document.getElementById('interval');
         intervalText.addEventListener('change', function (e) {
             console.log('interval changed');
-            saveVaccine(); method에서 interval 업데이트 됨
+            saveVaccine(); // method에서 interval 업데이트 됨
             
         });
 
@@ -67,7 +67,7 @@
     }
 
     const saveVaccine = () => {
-        // let selected = document.querySelector('input[name="select_vaccine"]:checked');
+        let selected = document.querySelector('input[name="select_vaccine"]:checked');
         let interval = document.getElementById('interval').value;
         // let isReserveTest = document.getElementById('reserve_test').checked ? 1 : 0;
 
