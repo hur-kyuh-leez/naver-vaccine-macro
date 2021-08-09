@@ -66,16 +66,18 @@ const _reload = (data) => {
     if (!Number.isInteger(settingInterval))
         settingInterval = RELOAD_INTERVAL_MILLISECONDS;
 
-    let modify = ((new Date().getTime()) % 20);
-
-    console.log("setting interval:" + settingInterval + ", modify:" + modify);
-
-    if (settingInterval > modify)
-        settingInterval -= modify;
+    // // for exact timing
+    // let modify = ((new Date().getTime()) % 20);
+    // console.log("setting interval:" + settingInterval + ", modify:" + modify);
+    // if (settingInterval > modify)
+    //     settingInterval -= modify;
 
     console.log("curr interval:" + settingInterval);
-
-    _tick = setTimeout(reload, settingInterval);
+    upperBound = 5;
+    lowerBound = 2;
+    randNum = Math.floor((upperBound-lowerBound+1)*Math.random()+lowerBound) * 1000;
+    console.log(randNum);
+    _tick = setTimeout(reload, randNum);
 };
 
 const injectButton = () => {
@@ -92,6 +94,7 @@ const injectButton = () => {
 }
 
 const macro = (data) => {
+    // 여기서 에서 macro.data는 local.storage
 
     if (location.href.includes("error")) {
         console.log("예약 시도했지만 결과페이지는 에러, 질병 관리청 응답 지연");
@@ -139,7 +142,6 @@ const macro = (data) => {
             console.log("error detected. try reload.");
             chrome_v2.sendMessage({type: "errorWhileTicketing", name: sCurrentName});
         }
-
         _reload(data);
         return;
     }

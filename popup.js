@@ -13,10 +13,6 @@
         // document.getElementById('chat-id').value = localStorage.getItem('NAVER_VACCINE_MACRO::chat-id');
         let savedInterval = parseInt(localStorage.getItem('NAVER_VACCINE_MACRO::interval'));
         
-        let savedInterval_max = parseInt(localStorage.getItem('NAVER_VACCINE_MACRO::interval_max')); // To Do: 주기를 random으로 바꾸기
-
-
-
         if (!savedInterval || savedInterval < MIN_RELOAD_INTERVAL_MILLISECONDS)
         {
             savedInterval = MIN_RELOAD_INTERVAL_MILLISECONDS;
